@@ -1,7 +1,12 @@
 # Mongoose Cache Manager
 
 This module caches [mongoose][1] queries with [cache-manager][2] using an in-memory or Redis engine. The module
-was originally based on [mongoose-redis-cache][3], but was change to allow for a generic caching store.
+was originally based on [mongoose-redis-cache][3], but was change to allow for a generic caching store and to
+allow timestamp checking to prevent serving of stale data.
+
+Like many other ORM cache solutions, the cache can only be kept fresh if this module is used for both reads
+*and writes*. When something writes directly to Mongo without using mongoose, there is no way for this module
+to know it needs to reload fresh data into the cache.
 
 In the future I want to try to improve this cache layer by using entity-based caching instead of just blanket
 query caching.
