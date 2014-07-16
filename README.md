@@ -17,14 +17,14 @@ In the future I want to try to improve this cache layer by using entity-based ca
 ## Installation
 
 ``` bash
-$ npm install --save mongoose-cacheman
+$ npm install --save mongoose-cache-manager
 ```
 
 ## Usage
 
 ``` javascript
 var mongoose = require('mongoose'),
-    mongooseCache = require('mogoose-cacheman');
+    mongooseCache = require('mogoose-cache-manager');
 
 // patch mongoose with default options
 mongooseCache(mongoose, {
@@ -99,12 +99,12 @@ User
 
 ## Redis
 
-By default `mongoose-cacheman` will use the memory engine to cache queries but it can also cache queries using
+By default `mongoose-cache-manager` will use the memory engine to cache queries but it can also cache queries using
 [Redis][20] by specifying redis engine when initializing the plugin:
 
 ``` javascript
 var mongoose = require('mongoose'),
-    mongooseCache = require('mongoose-cacheman');
+    mongooseCache = require('mongoose-cache-manager');
 
 // patch mongoose with redis for caching
 // this will cache queries in redis with the default TTL of 60 seconds
@@ -116,10 +116,7 @@ mongooseCachebox(mongoose, {
 });
 ```
 
-This module uses [cacheman][21] for the caching abstraction, so check out the project for more details and options.
-
 [20]: http://redis.io/
-[21]: https://github.com/cayasso/cacheman
 
 ## Run tests
 
@@ -150,7 +147,7 @@ After that, you can run the performance tests with `npm run-script perf` which w
 
 ```
 =========================
-mongoose-cacheman Cache Test
+mongoose-cache-manager Cache Test
 =========================
 Total items in DB: 30000
 Total number of queries per round: 20

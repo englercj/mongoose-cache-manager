@@ -1,6 +1,6 @@
 {
-  "name": "mongoose-cacheman",
-  "version": "0.0.2",
+  "name": "mongoose-cache-manager",
+  "version": "0.1.0",
   "description": "Cache mongoose queries in memory, redis or use your own driver.",
   "main": "index.js",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/englercj/mongoose-cacheman.git"
+    "url": "https://github.com/englercj/mongoose-cache-manager.git"
   },
   "author": "Chad Engler <chad@pantherdev.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/englercj/mongoose-cacheman/issues"
+    "url": "https://github.com/englercj/mongoose-cache-manager/issues"
   },
-  "homepage": "https://github.com/englercj/mongoose-cacheman",
+  "homepage": "https://github.com/englercj/mongoose-cache-manager",
   "dependencies": {
     "async": "^0.9.0",
     "cache-manager": "~0.8.0",

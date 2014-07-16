@@ -203,9 +203,9 @@ function runTest(name, cb) {
 // clear the database before starting, then generate mock data
 before(function (done) {
     console.log(
-        '\n=========================\n' +
-        'mongoose-cacheman Cache Test\n' +
-        '=========================\n' +
+        '\n===================================\n' +
+        'mongoose-cache-manager Cache Test\n' +
+        '====================================\n' +
         'Total items in DB: ' + itemsCount + '\n' +
         'Total number of queries per round: ' + maxQueriesCount + '\n' +
         'Total number of rounds: ' + testRounds + '\n'
