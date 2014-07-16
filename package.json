@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/englercj/mongoose-cacheman",
   "dependencies": {
-    "cacheman": "~1.0.1",
-    "cacheman-redis": "~0.1.1"
+    "cache-manager": "~0.8.0",
+    "redis": "~0.11.0"
+  },
+  "optionalDependencies": {
+    "hiredis": "~0.1.17"
   },
   "devDependencies": {
     "gulp": "~3.8.6",

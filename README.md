@@ -1,17 +1,10 @@
-# mongoose-cacheman
+# Mongoose Cache Manager
 
-This module caches [mongoose][1] queries with [cacheman][2] using an in-memory or Redis engine.
-
-Based on [mongoose-redis-cache][3], but with some changes:
-
-- Simplified and cleaned up some code
-- Minor performance improvements
-- Use [cacheman][2] to abstract the cache engine
-
-
+This module caches [mongoose][1] queries with [cache-manager][2] using an in-memory or Redis engine. The module
+was originally based on [mongoose-redis-cache][3], but has since evolved into a full write-through cache solution.
 
 [1]: http://http://mongoosejs.com/
-[2]: https://github.com/cayasso/cacheman
+[2]: https://github.com/BryanDonovan/node-cache-manager
 [3]: https://github.com/conancat/mongoose-redis-cache
 
 ## Installation
