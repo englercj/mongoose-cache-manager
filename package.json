@@ -1,6 +1,6 @@
 {
   "name": "mongoose-cacheman",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cache mongoose queries in memory, redis or use your own driver.",
   "main": "index.js",
   "scripts": {
