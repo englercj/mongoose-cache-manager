@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/englercj/mongoose-cacheman",
   "dependencies": {
+    "async": "^0.9.0",
     "cache-manager": "~0.8.0",
     "redis": "~0.11.0"
   },
