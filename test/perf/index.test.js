@@ -25,8 +25,8 @@ var mongoose = require('mongoose'),
     mongooseCache = require('../../index');
 
 // counts for items to test
-var itemsCount = 1000,
-    testRounds = 10,
+var itemsCount = 30000,
+    testRounds = 25,
     cacheTtl = 60,
     timeout = 1000 * 30,
 
