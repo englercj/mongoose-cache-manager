@@ -31,7 +31,7 @@ var itemsCount = 30000,
 
     mongoConnectionString = 'mongodb://pitboss_app:P1t_b0$$_4pP@10.130.59.71:27017/pitboss',
     redisConnectionOptions = {
-        engine: 'redis',
+        store: 'redis',
         host: '10.130.59.71',
         port: 6379,
         password: ''
@@ -243,7 +243,7 @@ describe('Mongoose queries with redis caching', function () {
 describe('Mongoose queries with memory caching', function () {
     before(function () {
         mongooseCache(mongoose, {
-            engine: 'memory'
+            store: 'memory'
         });
     });
 
