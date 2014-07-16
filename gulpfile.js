@@ -14,7 +14,7 @@ gulp.task('jshint', function () {
 /*****
  * Test task, runs mocha against unit test files.
  *****/
-gulp.task('test', function () {
+gulp.task('test', ['jshint'], function () {
     return gulp.src('./test/unit/**/*.test.js', { read: false })
             .pipe(mocha({
                 ui: 'bdd',
@@ -25,9 +25,9 @@ gulp.task('test', function () {
 /*****
  * Default task, runs jshint and test tasks.
  *****/
-gulp.task('default', ['jshint', 'test']);
+gulp.task('default', ['test']);
 
 /*****
  * CI test task, runs jshint and test tasks.
  *****/
-gulp.task('testci', ['jshint', 'test']);
+gulp.task('testci', ['test']);
