@@ -245,17 +245,17 @@ describe('Mongoose queries with redis caching', function () {
     });
 });
 
-describe('Mongoose queries with memory caching', function () {
-    before(function () {
-        mongooseCache(mongoose, {
-            store: 'memory'
-        });
-    });
+// describe('Mongoose queries with memory caching', function () {
+//     before(function () {
+//         mongooseCache(mongoose, {
+//             store: 'memory'
+//         });
+//     });
 
-    runTest('query with memory caching', function (totalTime) {
-        totalTimeWithMemory = totalTime;
-    });
-});
+//     runTest('query with memory caching', function (totalTime) {
+//         totalTimeWithMemory = totalTime;
+//     });
+// });
 
 after(function (done) {
     console.log(

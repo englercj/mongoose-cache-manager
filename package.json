@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/englercj/mongoose-cache-manager",
   "dependencies": {
-    "async": "^0.9.0",
-    "cache-manager": "~0.8.0",
     "redis": "~0.11.0"
   },
   "optionalDependencies": {
