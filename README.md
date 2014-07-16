@@ -1,6 +1,6 @@
 # Mongoose Cache Manager
 
-This module caches [mongoose][1] queries with [cache-manager][2] using an in-memory or Redis engine. The module
+This module caches [mongoose][1] queries with [cache-manager][2] using an in-memory or Redis store. The module
 was originally based on [mongoose-redis-cache][3], but was change to allow for a generic caching store and to
 add timestamp checking to prevent serving of stale data.
 
@@ -30,7 +30,7 @@ var mongoose = require('mongoose'),
 mongooseCache(mongoose, {
     cache : true,
     ttl   : 60,
-    engine: 'memory',
+    store: 'memory',
     prefix: 'cache'
 });
 
@@ -99,8 +99,8 @@ User
 
 ## Redis
 
-By default `mongoose-cache-manager` will use the memory engine to cache queries but it can also cache queries using
-[Redis][20] by specifying redis engine when initializing the plugin:
+By default `mongoose-cache-manager` will use the memory store to cache queries but it can also cache queries using
+[Redis][20] by specifying redis store when initializing the plugin:
 
 ``` javascript
 var mongoose = require('mongoose'),
@@ -109,7 +109,7 @@ var mongoose = require('mongoose'),
 // patch mongoose with redis for caching
 // this will cache queries in redis with the default TTL of 60 seconds
 mongooseCachebox(mongoose, {
-    engine: 'redis',
+    store: 'redis',
     host: '127.0.0.1',
     port: '6379',
     password: 'secret'
