@@ -1,7 +1,10 @@
 # Mongoose Cache Manager
 
 This module caches [mongoose][1] queries with [cache-manager][2] using an in-memory or Redis engine. The module
-was originally based on [mongoose-redis-cache][3], but has since evolved into a full write-through cache solution.
+was originally based on [mongoose-redis-cache][3], but was change to allow for a generic caching store.
+
+In the future I want to try to improve this cache layer by using entity-based caching instead of just blanket
+query caching.
 
 [1]: http://http://mongoosejs.com/
 [2]: https://github.com/BryanDonovan/node-cache-manager
