@@ -19,20 +19,21 @@
  */
 
 var mongoose = require('mongoose'),
+    redis = require('redis'),
     Schema = mongoose.Schema,
     async = require('async'),
     mongooseCache = require('../../index');
 
 // counts for items to test
-var itemsCount = 30000,
-    testRounds = 30,
+var itemsCount = 1000,
+    testRounds = 10,
     cacheTtl = 60,
     timeout = 1000 * 30,
 
-    mongoConnectionString = 'mongodb://pitboss_app:P1t_b0$$_4pP@10.130.59.71:27017/pitboss',
+    mongoConnectionString = 'mongodb://192.168.0.12:27017/test',
     redisConnectionOptions = {
         store: 'redis',
-        host: '10.130.59.71',
+        host: '192.168.0.12',
         port: 6379,
         password: ''
     },
@@ -63,7 +64,8 @@ var itemsCount = 30000,
         'Daniel',
         'Chloe'
     ],
-    maxQueriesCount = mockNames.length;
+    maxQueriesCount = mockNames.length,
+    redisClient = redis.createClient(redisConnectionOptions);
 
 /****************************
  * Setup the test.
@@ -89,7 +91,10 @@ var TestItem = mongoose.model('TestItem', TestItemSchema);
 
 // clear the database for clean start next time
 function clearDb(cb) {
-    TestItem.remove(cb);
+    async.parallel([
+        TestItem.remove.bind(TestItem),
+        redisClient.flushall.bind(redisClient)
+    ], cb);
 }
 
 // generate the mock data to test against
@@ -240,17 +245,17 @@ describe('Mongoose queries with redis caching', function () {
     });
 });
 
-describe('Mongoose queries with memory caching', function () {
-    before(function () {
-        mongooseCache(mongoose, {
-            store: 'memory'
-        });
-    });
+// describe('Mongoose queries with memory caching', function () {
+//     before(function () {
+//         mongooseCache(mongoose, {
+//             store: 'memory'
+//         });
+//     });
 
-    runTest('query with memory caching', function (totalTime) {
-        totalTimeWithMemory = totalTime;
-    });
-});
+//     runTest('query with memory caching', function (totalTime) {
+//         totalTimeWithMemory = totalTime;
+//     });
+// });
 
 after(function (done) {
     console.log(
