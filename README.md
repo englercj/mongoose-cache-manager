@@ -17,14 +17,14 @@ In the future I want to try to improve this cache layer by using entity-based ca
 ## Installation
 
 ``` bash
-$ npm install --save mongoose-cache-manager
+$ npm install englercj/mongoose-cache-manager --save
 ```
 
 ## Usage
 
 ``` javascript
 var mongoose = require('mongoose'),
-    mongooseCache = require('mogoose-cache-manager');
+    mongooseCache = require('mongoose-cache-manager');
 
 // patch mongoose with default options
 mongooseCache(mongoose, {
