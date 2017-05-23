@@ -134,7 +134,7 @@ or run gulp directly if you have it installed globally:
 $ gulp test
 ```
 
-[30]: http://visionmedia.github.io/mocha/
+[30]: http://mochajs.org/
 [31]: http://chaijs.com/
 [32]: http://gulpjs.com/
 
